@@ -25,6 +25,19 @@ class WelcomeViewController: UIViewController {
         return label
     }()
 
+    private lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("메인으로", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        button.backgroundColor = .tvingRed
+        button.setTitleColor(.tvingWhite, for: .normal)
+        button.layer.cornerRadius = 6
+        button.addTarget(self,
+                         action: #selector(backButtonTapped),
+                         for: .touchUpInside)
+        return button
+    }()
+
     private var id: String? = nil
 
     override func viewDidLoad() {
@@ -35,7 +48,7 @@ class WelcomeViewController: UIViewController {
     }
 
     func setLayout() {
-        [welcomeImage, titleLabel].forEach { [weak self] item in
+        [welcomeImage, titleLabel, backButton].forEach { [weak self] item in
             guard let self = self else { return }
             self.view.addSubview(item)
         }
@@ -53,6 +66,17 @@ class WelcomeViewController: UIViewController {
             $0.centerX.equalToSuperview()
             $0.height.equalTo(100)
         }
+
+        backButton.snp.makeConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-66)
+            $0.leading.equalTo(view.snp.leading).offset(20)
+            $0.trailing.equalTo(view.snp.trailing).offset(-20)
+            $0.height.equalTo(52)
+        }
+    }
+
+    @objc func backButtonTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
 
     func bindId() {
