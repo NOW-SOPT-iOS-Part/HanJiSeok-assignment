@@ -61,10 +61,9 @@ class LoginViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         button.backgroundColor = .tvingBlack
         button.setTitleColor(.tvingGray2, for: .normal)
-        button.setTitleColor(.tvingGray2, for: .selected)
         button.addTarget(self,
                          action: #selector(loginButtonTapped),
-                         for: .allTouchEvents)
+                         for: .touchUpInside)
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.tvingGray2.cgColor
         button.layer.cornerRadius = 6
@@ -82,7 +81,7 @@ class LoginViewController: UIViewController {
 
     private lazy var findPasswordButton: UIButton = {
         let button = UIButton()
-        button.setTitle("아이디 찾기", for: .normal)
+        button.setTitle("비밀번호 찾기", for: .normal)
         button.setTitleColor(.tvingGray2, for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         return button
@@ -106,6 +105,7 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.setTitle("닉네임 만들러 가기", for: .normal)
         button.setTitleColor(.tvingGray2, for: .normal)
+        button.addUnderline()
         button.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 14)
         button.addTarget(self,
                          action: #selector(nicknameButtonTapped),
@@ -223,9 +223,14 @@ extension LoginViewController {
     }
 
     @objc func loginButtonTapped(_ sender: UIButton) {
-
         let welcomeViewController = WelcomeViewController()
-        welcomeViewController.setLabelText(id: idTextField.text)
+        var sendData: String?
+        if let nickname = nickname {
+            sendData = nickname
+        } else {
+            sendData = idTextField.text
+        }
+        welcomeViewController.setLabelText(id: sendData)
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }
 
@@ -233,8 +238,16 @@ extension LoginViewController {
         let nicenameViewController = NicknameViewController()
         if let sheet = nicenameViewController.sheetPresentationController {
             sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
         }
+        nicenameViewController.delegate = self
         self.present(nicenameViewController, animated: true)
+    }
+}
+
+extension LoginViewController: NicknameDelegate {
+    func dataSend(data: String) {
+        self.nickname = data
     }
 }
 
