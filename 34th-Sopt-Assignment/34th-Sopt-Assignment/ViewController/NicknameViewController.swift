@@ -9,42 +9,51 @@ import UIKit
 
 import SnapKit
 
+protocol NicknameDelegate {
+    func dataSend(data: String)
+}
+
 class NicknameViewController: UIViewController {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "TVING ID 로그인"
+        label.text = "닉네임을 입력해주세요!"
         label.font = UIFont(name: "Pretendard-Medium", size: 23)
-        label.textColor = .tvingGray1
+        label.textColor = .tvingBlack
         label.textAlignment = .center
         return label
     }()
 
     private let nicknameTextField: UITextField = {
         let textField = UITextField()
-        textField.textColor = .tvingGray2
-        let attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: .tvingGray2 ]
+        textField.textColor = .tvingGray4
+        let attributes: [NSAttributedString.Key: UIColor] = [.foregroundColor: .tvingGray4 ]
         textField.attributedPlaceholder = NSAttributedString(string: "아이디",
                                                              attributes: attributes)
         textField.leftPadding()
-        textField.idRightView()
-        textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
-        textField.backgroundColor = .tvingGray4
+        textField.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        textField.backgroundColor = .tvingGray2
         textField.layer.cornerRadius = 3
-//        textField.addTarget(self,
-//                            action: #selector(textFieldDidChange),
-//                            for: .editingChanged)
+        textField.addTarget(self,
+                            action: #selector(textFieldDidChange),
+                            for: .editingChanged)
         return textField
     }()
 
     private lazy var saveButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .tvingRed
+        button.backgroundColor = .tvingGray2
         button.setTitle("저장하기", for: .normal)
-        button.setTitleColor(.tvingWhite, for: .normal)
+        button.setTitleColor(.tvingBlack, for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
+        button.layer.cornerRadius = 3
+        button.addTarget(self,
+                         action: #selector(saveButtonTapped),
+                         for: .touchUpInside)
         return button
     }()
+
+    var delegate: NicknameDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +71,7 @@ class NicknameViewController: UIViewController {
 
     private func setAutoLayout() {
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(14)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
             $0.leading.equalTo(view.snp.leading).offset(20)
             $0.height.equalTo(27)
         }
@@ -82,4 +91,23 @@ class NicknameViewController: UIViewController {
         }
     }
 
+}
+
+extension NicknameViewController {
+
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let nickname = nicknameTextField.text else { return }
+        let value = !nickname.isEmpty
+        saveButton.isEnabled = value
+        saveButton.backgroundColor = value ? .tvingRed : .tvingGray2
+        saveButton.setTitleColor(value ? .tvingWhite : .tvingBlack,
+                                  for: .normal)
+    }
+
+    @objc func saveButtonTapped(_ sender: UIButton) {
+        if let nickname = nicknameTextField.text {
+            delegate?.dataSend(data: nickname)
+        }
+        self.dismiss(animated: true)
+    }
 }
