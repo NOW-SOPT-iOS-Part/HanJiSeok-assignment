@@ -66,12 +66,7 @@ extension UITextField {
 
     @objc func visibleButtonTapped(_ sender: UIButton) {
         self.isSecureTextEntry.toggle()
-        if isSecureTextEntry {
-            let image = UIImage(systemName: "eye.circle")
-            sender.setImage(image, for: .normal)
-        } else {
-            let image = UIImage(systemName: "eye.slash.circle")
-            sender.setImage(image, for: .normal)
-        }
+        let image = UIImage(systemName: isSecureTextEntry ? "eye.circle" : "eye.slash.circle")
+        sender.setImage(image, for: .normal)
     }
 }
