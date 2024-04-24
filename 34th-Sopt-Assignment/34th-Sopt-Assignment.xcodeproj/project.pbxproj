@@ -9,21 +9,72 @@
 /* Begin PBXBuildFile section */
 		AF10B3C02BC6AACF001AFDF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF10B3BF2BC6AACF001AFDF7 /* AppDelegate.swift */; };
 		AF10B3C22BC6AACF001AFDF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF10B3C12BC6AACF001AFDF7 /* SceneDelegate.swift */; };
-		AF10B3C42BC6AACF001AFDF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF10B3C32BC6AACF001AFDF7 /* ViewController.swift */; };
+		AF10B3C42BC6AACF001AFDF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF10B3C32BC6AACF001AFDF7 /* LoginViewController.swift */; };
 		AF10B3C72BC6AACF001AFDF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF10B3C52BC6AACF001AFDF7 /* Main.storyboard */; };
 		AF10B3C92BC6AAD1001AFDF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF10B3C82BC6AAD1001AFDF7 /* Assets.xcassets */; };
 		AF10B3CC2BC6AAD1001AFDF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF10B3CA2BC6AAD1001AFDF7 /* LaunchScreen.storyboard */; };
+		AF3616712BCD6B890019185A /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3616702BCD6B890019185A /* UITextField+.swift */; };
+		AF6832A42BCCF28600932406 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AF6832A32BCCF28600932406 /* SnapKit */; };
+		AF6832A62BCCF28600932406 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = AF6832A52BCCF28600932406 /* SnapKit-Dynamic */; };
+		AF6832B62BCCF39400932406 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832B52BCCF39400932406 /* UIColor+.swift */; };
+		AF6832B82BCCF4EC00932406 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832B72BCCF4EC00932406 /* String+.swift */; };
+		AF6832DD2BCCF7BD00932406 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D42BCCF7BD00932406 /* Pretendard-ExtraBold.ttf */; };
+		AF6832DE2BCCF7BD00932406 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D52BCCF7BD00932406 /* Pretendard-Black.ttf */; };
+		AF6832DF2BCCF7BD00932406 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D62BCCF7BD00932406 /* Pretendard-Light.ttf */; };
+		AF6832E02BCCF7BD00932406 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D72BCCF7BD00932406 /* Pretendard-Bold.ttf */; };
+		AF6832E12BCCF7BD00932406 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D82BCCF7BD00932406 /* Pretendard-Regular.ttf */; };
+		AF6832E22BCCF7BD00932406 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D92BCCF7BD00932406 /* Pretendard-SemiBold.ttf */; };
+		AF6832E32BCCF7BD00932406 /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832DA2BCCF7BD00932406 /* Pretendard-Thin.ttf */; };
+		AF6832E42BCCF7BD00932406 /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832DB2BCCF7BD00932406 /* Pretendard-ExtraLight.ttf */; };
+		AF6832E52BCCF7BD00932406 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832DC2BCCF7BD00932406 /* Pretendard-Medium.ttf */; };
+		AF6832E72BCCFC6500932406 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832E62BCCFC6500932406 /* UIButton+.swift */; };
+		AF6832EA2BCD0DFA00932406 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832E92BCD0DFA00932406 /* ClearButton.swift */; };
+		AF6832ED2BCD0EDB00932406 /* CustomPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832EC2BCD0EDB00932406 /* CustomPadding.swift */; };
+		AF6832EF2BCD0FE300932406 /* VisibleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832EE2BCD0FE300932406 /* VisibleButton.swift */; };
+		AF6832F12BCD12A900932406 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832F02BCD12A900932406 /* WelcomeViewController.swift */; };
+		AFDC38E52BCD19C9007937E6 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDC38E42BCD19C9007937E6 /* NicknameViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF492DE72BCD205C00FA0FCA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AF10B3BC2BC6AACF001AFDF7 /* 34th-Sopt-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "34th-Sopt-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF10B3BF2BC6AACF001AFDF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF10B3C12BC6AACF001AFDF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF10B3C32BC6AACF001AFDF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AF10B3C32BC6AACF001AFDF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AF10B3C62BC6AACF001AFDF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF10B3C82BC6AAD1001AFDF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF10B3CB2BC6AAD1001AFDF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF10B3CD2BC6AAD1001AFDF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF3616702BCD6B890019185A /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		AF6832B52BCCF39400932406 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		AF6832B72BCCF4EC00932406 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		AF6832D42BCCF7BD00932406 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AF6832D52BCCF7BD00932406 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
+		AF6832D62BCCF7BD00932406 /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
+		AF6832D72BCCF7BD00932406 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
+		AF6832D82BCCF7BD00932406 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
+		AF6832D92BCCF7BD00932406 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
+		AF6832DA2BCCF7BD00932406 /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
+		AF6832DB2BCCF7BD00932406 /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
+		AF6832DC2BCCF7BD00932406 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
+		AF6832E62BCCFC6500932406 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
+		AF6832E92BCD0DFA00932406 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
+		AF6832EC2BCD0EDB00932406 /* CustomPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPadding.swift; sourceTree = "<group>"; };
+		AF6832EE2BCD0FE300932406 /* VisibleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibleButton.swift; sourceTree = "<group>"; };
+		AF6832F02BCD12A900932406 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		AFDC38E42BCD19C9007937E6 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6832A42BCCF28600932406 /* SnapKit in Frameworks */,
+				AF6832A62BCCF28600932406 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +109,65 @@
 		AF10B3BE2BC6AACF001AFDF7 /* 34th-Sopt-Assignment */ = {
 			isa = PBXGroup;
 			children = (
+				AF492DE82BCD207F00FA0FCA /* ViewController */,
+				AF6832E82BCD0DE800932406 /* Components */,
+				AF6832B12BCCF34100932406 /* Extensions */,
+				AF6832A72BCCF2D800932406 /* Font */,
 				AF10B3BF2BC6AACF001AFDF7 /* AppDelegate.swift */,
 				AF10B3C12BC6AACF001AFDF7 /* SceneDelegate.swift */,
-				AF10B3C32BC6AACF001AFDF7 /* ViewController.swift */,
 				AF10B3C52BC6AACF001AFDF7 /* Main.storyboard */,
 				AF10B3C82BC6AAD1001AFDF7 /* Assets.xcassets */,
 				AF10B3CA2BC6AAD1001AFDF7 /* LaunchScreen.storyboard */,
 				AF10B3CD2BC6AAD1001AFDF7 /* Info.plist */,
 			);
 			path = "34th-Sopt-Assignment";
+			sourceTree = "<group>";
+		};
+		AF492DE82BCD207F00FA0FCA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				AF10B3C32BC6AACF001AFDF7 /* LoginViewController.swift */,
+				AF6832F02BCD12A900932406 /* WelcomeViewController.swift */,
+				AFDC38E42BCD19C9007937E6 /* NicknameViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		AF6832A72BCCF2D800932406 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AF6832D52BCCF7BD00932406 /* Pretendard-Black.ttf */,
+				AF6832D72BCCF7BD00932406 /* Pretendard-Bold.ttf */,
+				AF6832D42BCCF7BD00932406 /* Pretendard-ExtraBold.ttf */,
+				AF6832DB2BCCF7BD00932406 /* Pretendard-ExtraLight.ttf */,
+				AF6832D62BCCF7BD00932406 /* Pretendard-Light.ttf */,
+				AF6832DC2BCCF7BD00932406 /* Pretendard-Medium.ttf */,
+				AF6832D82BCCF7BD00932406 /* Pretendard-Regular.ttf */,
+				AF6832D92BCCF7BD00932406 /* Pretendard-SemiBold.ttf */,
+				AF6832DA2BCCF7BD00932406 /* Pretendard-Thin.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		AF6832B12BCCF34100932406 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AF6832B52BCCF39400932406 /* UIColor+.swift */,
+				AF6832B72BCCF4EC00932406 /* String+.swift */,
+				AF6832E62BCCFC6500932406 /* UIButton+.swift */,
+				AF3616702BCD6B890019185A /* UITextField+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF6832E82BCD0DE800932406 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AF6832E92BCD0DFA00932406 /* ClearButton.swift */,
+				AF6832EC2BCD0EDB00932406 /* CustomPadding.swift */,
+				AF6832EE2BCD0FE300932406 /* VisibleButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,12 +180,17 @@
 				AF10B3B82BC6AACF001AFDF7 /* Sources */,
 				AF10B3B92BC6AACF001AFDF7 /* Frameworks */,
 				AF10B3BA2BC6AACF001AFDF7 /* Resources */,
+				AF492DE72BCD205C00FA0FCA /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "34th-Sopt-Assignment";
+			packageProductDependencies = (
+				AF6832A32BCCF28600932406 /* SnapKit */,
+				AF6832A52BCCF28600932406 /* SnapKit-Dynamic */,
+			);
 			productName = "34th-Sopt-Assignment";
 			productReference = AF10B3BC2BC6AACF001AFDF7 /* 34th-Sopt-Assignment.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +219,9 @@
 				Base,
 			);
 			mainGroup = AF10B3B32BC6AACF001AFDF7;
+			packageReferences = (
+				AF6832A22BCCF28600932406 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = AF10B3BD2BC6AACF001AFDF7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +236,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6832E22BCCF7BD00932406 /* Pretendard-SemiBold.ttf in Resources */,
+				AF6832DF2BCCF7BD00932406 /* Pretendard-Light.ttf in Resources */,
 				AF10B3CC2BC6AAD1001AFDF7 /* LaunchScreen.storyboard in Resources */,
+				AF6832E12BCCF7BD00932406 /* Pretendard-Regular.ttf in Resources */,
 				AF10B3C92BC6AAD1001AFDF7 /* Assets.xcassets in Resources */,
 				AF10B3C72BC6AACF001AFDF7 /* Main.storyboard in Resources */,
+				AF6832E32BCCF7BD00932406 /* Pretendard-Thin.ttf in Resources */,
+				AF6832DD2BCCF7BD00932406 /* Pretendard-ExtraBold.ttf in Resources */,
+				AF6832E52BCCF7BD00932406 /* Pretendard-Medium.ttf in Resources */,
+				AF6832DE2BCCF7BD00932406 /* Pretendard-Black.ttf in Resources */,
+				AF6832E02BCCF7BD00932406 /* Pretendard-Bold.ttf in Resources */,
+				AF6832E42BCCF7BD00932406 /* Pretendard-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +258,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF10B3C42BC6AACF001AFDF7 /* ViewController.swift in Sources */,
+				AF10B3C42BC6AACF001AFDF7 /* LoginViewController.swift in Sources */,
+				AF6832E72BCCFC6500932406 /* UIButton+.swift in Sources */,
+				AF6832F12BCD12A900932406 /* WelcomeViewController.swift in Sources */,
+				AF3616712BCD6B890019185A /* UITextField+.swift in Sources */,
+				AF6832ED2BCD0EDB00932406 /* CustomPadding.swift in Sources */,
+				AFDC38E52BCD19C9007937E6 /* NicknameViewController.swift in Sources */,
 				AF10B3C02BC6AACF001AFDF7 /* AppDelegate.swift in Sources */,
 				AF10B3C22BC6AACF001AFDF7 /* SceneDelegate.swift in Sources */,
+				AF6832EF2BCD0FE300932406 /* VisibleButton.swift in Sources */,
+				AF6832B82BCCF4EC00932406 /* String+.swift in Sources */,
+				AF6832B62BCCF39400932406 /* UIColor+.swift in Sources */,
+				AF6832EA2BCD0DFA00932406 /* ClearButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +492,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF6832A22BCCF28600932406 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF6832A32BCCF28600932406 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF6832A22BCCF28600932406 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		AF6832A52BCCF28600932406 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF6832A22BCCF28600932406 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF10B3B42BC6AACF001AFDF7 /* Project object */;
 }
