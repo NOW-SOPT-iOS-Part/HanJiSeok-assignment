@@ -13,9 +13,9 @@
 		AF10B3C72BC6AACF001AFDF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF10B3C52BC6AACF001AFDF7 /* Main.storyboard */; };
 		AF10B3C92BC6AAD1001AFDF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF10B3C82BC6AAD1001AFDF7 /* Assets.xcassets */; };
 		AF10B3CC2BC6AAD1001AFDF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF10B3CA2BC6AAD1001AFDF7 /* LaunchScreen.storyboard */; };
+		AF3616712BCD6B890019185A /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3616702BCD6B890019185A /* UITextField+.swift */; };
 		AF6832A42BCCF28600932406 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AF6832A32BCCF28600932406 /* SnapKit */; };
 		AF6832A62BCCF28600932406 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = AF6832A52BCCF28600932406 /* SnapKit-Dynamic */; };
-		AF6832B32BCCF34B00932406 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832B22BCCF34B00932406 /* UITextField+.swift */; };
 		AF6832B62BCCF39400932406 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832B52BCCF39400932406 /* UIColor+.swift */; };
 		AF6832B82BCCF4EC00932406 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832B72BCCF4EC00932406 /* String+.swift */; };
 		AF6832DD2BCCF7BD00932406 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D42BCCF7BD00932406 /* Pretendard-ExtraBold.ttf */; };
@@ -57,7 +57,7 @@
 		AF10B3C82BC6AAD1001AFDF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF10B3CB2BC6AAD1001AFDF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF10B3CD2BC6AAD1001AFDF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF6832B22BCCF34B00932406 /* UITextField+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+.swift"; path = "../../../../HanJiSeok-practice/34th-Sopt-Seminar/Extensions/UITextField+.swift"; sourceTree = "<group>"; };
+		AF3616702BCD6B890019185A /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 		AF6832B52BCCF39400932406 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		AF6832B72BCCF4EC00932406 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		AF6832D42BCCF7BD00932406 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -152,10 +152,10 @@
 		AF6832B12BCCF34100932406 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AF6832B22BCCF34B00932406 /* UITextField+.swift */,
 				AF6832B52BCCF39400932406 /* UIColor+.swift */,
 				AF6832B72BCCF4EC00932406 /* String+.swift */,
 				AF6832E62BCCFC6500932406 /* UIButton+.swift */,
+				AF3616702BCD6B890019185A /* UITextField+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -261,11 +261,11 @@
 				AF10B3C42BC6AACF001AFDF7 /* LoginViewController.swift in Sources */,
 				AF6832E72BCCFC6500932406 /* UIButton+.swift in Sources */,
 				AF6832F12BCD12A900932406 /* WelcomeViewController.swift in Sources */,
+				AF3616712BCD6B890019185A /* UITextField+.swift in Sources */,
 				AF6832ED2BCD0EDB00932406 /* CustomPadding.swift in Sources */,
 				AFDC38E52BCD19C9007937E6 /* NicknameViewController.swift in Sources */,
 				AF10B3C02BC6AACF001AFDF7 /* AppDelegate.swift in Sources */,
 				AF10B3C22BC6AACF001AFDF7 /* SceneDelegate.swift in Sources */,
-				AF6832B32BCCF34B00932406 /* UITextField+.swift in Sources */,
 				AF6832EF2BCD0FE300932406 /* VisibleButton.swift in Sources */,
 				AF6832B82BCCF4EC00932406 /* String+.swift in Sources */,
 				AF6832B62BCCF39400932406 /* UIColor+.swift in Sources */,

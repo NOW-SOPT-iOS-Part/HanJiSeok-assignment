@@ -48,10 +48,11 @@ class WelcomeViewController: UIViewController {
     }
 
     func setLayout() {
-        [welcomeImage, titleLabel, backButton].forEach { [weak self] item in
-            guard let self = self else { return }
-            self.view.addSubview(item)
-        }
+        [
+            welcomeImage,
+            titleLabel,
+            backButton
+        ].forEach { self.view.addSubview($0) }
     }
 
     func setAutoLayout() {

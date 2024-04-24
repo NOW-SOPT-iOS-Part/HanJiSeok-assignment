@@ -63,10 +63,11 @@ class NicknameViewController: UIViewController {
     }
 
     private func setLayout() {
-        [titleLabel, nicknameTextField, saveButton].forEach { [weak self] item in
-            guard let self = self else { return }
-            self.view.addSubview(item)
-        }
+        [
+            titleLabel,
+            nicknameTextField,
+            saveButton
+        ].forEach { self.view.addSubview($0) }
     }
 
     private func setAutoLayout() {

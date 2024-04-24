@@ -135,24 +135,18 @@ class LoginViewController: UIViewController {
             divider,
             helpLabel,
             nicknameButton
-        ].forEach { [weak self] item in
-            guard let self else { return }
-            self.view.addSubview(item)
-        }
+        ].forEach { self.view.addSubview($0) }
     }
 
     private func setAutoLayout() {
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().inset(90)
-            $0.width.equalTo(170)
-            $0.height.equalTo(37)
         }
 
         idTextField.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(40)
-            $0.leading.equalToSuperview().inset(20)
-            $0.trailing.equalToSuperview().inset(20)
+            $0.horizontalEdges.equalToSuperview().inset(20)
             $0.height.equalTo(52)
         }
 
