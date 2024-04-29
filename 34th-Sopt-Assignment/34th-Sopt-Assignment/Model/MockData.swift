@@ -7,8 +7,8 @@
 
 import UIKit
 
-enum MockContents {
-    static let data: [(UIImage, String)] = [
+enum MockData {
+    static let contents: [(UIImage, String)] = [
         (UIImage(resource: .contents1), "시그널"),
         (UIImage(resource: .contents2), "해리포터"),
         (UIImage(resource: .contents3), "맨시티"),
