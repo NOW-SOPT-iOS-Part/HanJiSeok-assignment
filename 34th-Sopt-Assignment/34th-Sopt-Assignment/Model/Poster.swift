@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+struct Poster {
+    let title: String
+    let description: String
+    let image: UIImage
+}
