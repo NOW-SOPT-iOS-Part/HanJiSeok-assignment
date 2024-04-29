@@ -49,10 +49,7 @@ class HomeViewController: UIViewController {
 
         let dusanImage = UIImage(resource: .dusan)
         let dusanImageView = UIImageView(image: dusanImage)
-        dusanImageView.frame = CGRect(x: 0, y: 0, width: 33, height: 31)
-        let dusanView = UIView(frame: dusanImageView.frame)
-        dusanView.addSubview(dusanImageView)
-        let rightItem = UIBarButtonItem(image: dusanImage)
+        let rightItem = UIBarButtonItem(customView: dusanImageView)
 
         self.navigationItem.leftBarButtonItem = leftItem
         self.navigationItem.rightBarButtonItem = rightItem
@@ -116,6 +113,10 @@ extension HomeViewController {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
             withReuseIdentifier: HeaderView.identifier
         )
+        self.collectionView!.register(
+            PosterPageControl.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+            withReuseIdentifier: PosterPageControl.identifier)
     }
 
     private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection {
@@ -129,7 +130,7 @@ extension HomeViewController {
         case 3:
             return contentSection(weightConstant: sectionIndex)
         default:
-            return contentSection(weightConstant: 0) // 임시로 넣어놨다. 섹션은 0~3까지고, 여기 도달할 일없지만, 만약 도달하면 error니까 제대로 된 error 처리 요망
+            return contentSection(weightConstant: 0)
         }
     }
 
@@ -149,6 +150,15 @@ extension HomeViewController {
             subitems: [item]
         )
 
+        let footerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(50)
+        )
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: footerSize,
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom
+        )
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .groupPaging
         section.contentInsets = NSDirectionalEdgeInsets(
@@ -157,6 +167,9 @@ extension HomeViewController {
             bottom: 30,
             trailing: 0
         )
+        section.boundarySupplementaryItems = [
+            footer
+        ]
         return section
     }
 
@@ -168,6 +181,7 @@ extension HomeViewController {
             heightDimension: .fractionalHeight(0.2)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(170)
@@ -177,6 +191,7 @@ extension HomeViewController {
             subitems: [item]
         )
         group.interItemSpacing = .fixed(8)
+
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(50)
@@ -209,16 +224,23 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath
     ) -> UICollectionReusableView {
-        guard kind == UICollectionView.elementKindSectionHeader else {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: HeaderView.identifier,
+                for: indexPath) as! HeaderView
+            headerView.titleLabel.text = MockData.title[indexPath.section - 1]
+            headerView.titleLabel.textColor = .white
+            return headerView
+        } else if kind == UICollectionView.elementKindSectionFooter {
+            let footerView = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: PosterPageControl.identifier,
+                for: indexPath) as! PosterPageControl
+            return footerView
+        } else {
             return UICollectionReusableView()
         }
-        let headerView = collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: HeaderView.identifier,
-            for: indexPath) as! HeaderView
-        headerView.titleLabel.text = MockContents.title[indexPath.section - 1]
-        headerView.titleLabel.textColor = .white
-        return headerView
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -254,7 +276,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for: indexPath
             ) as? PosterCell
             else { return UICollectionViewCell() }
-            posterCell.posterImageView.image = MockContents.poster[indexPath.row].image
+            posterCell.posterImageView.image = MockData.poster[indexPath.row].image
             cell = posterCell
         } else {
             guard let contentCell = collectionView.dequeueReusableCell(
@@ -262,8 +284,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for: indexPath
             ) as? ContentCell
             else { return UICollectionViewCell() }
-            contentCell.contentImageView.image = MockContents.data[indexPath.row].0
-            contentCell.titleLabel.text = MockContents.data[indexPath.row].1
+            contentCell.contentImageView.image = MockData.contents[indexPath.row].0
+            contentCell.titleLabel.text = MockData.contents[indexPath.row].1
             cell = contentCell
         }
         return cell
