@@ -9,18 +9,11 @@ import UIKit
 
 import SnapKit
 
-//protocol ProductCollectionViewCellDelegate: AnyObject {
-//    func heartButtonDidTapEvent(state: Bool, row: Int)
-//}
-
 class PosterCell: UICollectionViewCell {
 
     static let identifier = "PosterCell"
 
-//    weak var delegate: ProductCollectionViewCellDelegate?
-//    var itemRow: Int?
-
-    private let posterImageView = UIImageView()
+    let posterImageView = UIImageView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

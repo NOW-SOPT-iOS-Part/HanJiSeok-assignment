@@ -9,21 +9,13 @@ import UIKit
 
 import SnapKit
 
-//protocol ProductCollectionViewCellDelegate: AnyObject {
-//    func heartButtonDidTapEvent(state: Bool, row: Int)
-//}
-
 class ContentCell: UICollectionViewCell {
 
     static let identifier = "ContentCell"
 
-//    weak var delegate: ProductCollectionViewCellDelegate?
-//    var itemRow: Int?
+    let contentImageView = UIImageView()
 
-    private let contentImageView = UIImageView()
-
-    // gray 2
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Pretendard-Medium", size: 10)
         label.textColor = .tvingGray2
@@ -58,5 +50,4 @@ class ContentCell: UICollectionViewCell {
             $0.leading.equalToSuperview()
         }
     }
-
 }
