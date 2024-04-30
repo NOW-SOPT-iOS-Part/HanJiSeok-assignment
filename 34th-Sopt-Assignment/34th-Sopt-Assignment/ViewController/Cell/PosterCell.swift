@@ -13,12 +13,27 @@ class PosterCell: UICollectionViewCell {
 
     static let identifier = "PosterCell"
 
-    let posterImageView = UIImageView()
+    private let posterImageView = UIImageView()
+
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Pretendard-Bold", size: 24)
+        label.textColor = .white
+        return label
+    }()
+
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Pretendard-Medium", size: 17)
+        label.textColor = .white
+        label.numberOfLines = 2
+        return label
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        setLayout()
+        setUI()
         setAutoLayout()
     }
 
@@ -26,8 +41,11 @@ class PosterCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setLayout() {
+    private func setUI() {
         self.addSubview(posterImageView)
+        self.addSubview(titleLabel)
+        self.addSubview(descriptionLabel)
+
     }
 
     private func setAutoLayout() {
@@ -36,6 +54,22 @@ class PosterCell: UICollectionViewCell {
             $0.width.equalTo(UIScreen.main.bounds.size.width)
             $0.height.equalTo(UIScreen.main.bounds.size.width * 1.328)
         }
+
+        titleLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview().inset(130)
+        }
+
+        descriptionLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview().inset(70)
+        }
+    }
+
+    func dataBind(_ poster: Poster) {
+        self.posterImageView.image = poster.image
+        self.titleLabel.text = poster.title
+        self.descriptionLabel.text = poster.description
     }
 
 }
