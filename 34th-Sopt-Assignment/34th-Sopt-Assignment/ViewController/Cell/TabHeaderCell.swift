@@ -34,14 +34,14 @@ class TabHeaderCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayouts()
+        setUp()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupLayouts() {
+    private func setUp() {
         contentView.addSubview(titleButton)
         contentView.addSubview(underlineView)
         titleButton.snp.makeConstraints {

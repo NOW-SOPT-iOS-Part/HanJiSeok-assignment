@@ -26,7 +26,7 @@ class ContentCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
-        setLayout()
+        setUI()
         setAutoLayout()
     }
 
@@ -34,7 +34,7 @@ class ContentCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setLayout() {
+    private func setUI() {
         self.addSubview(contentImageView)
         self.addSubview(titleLabel)
     }
@@ -49,5 +49,10 @@ class ContentCell: UICollectionViewCell {
             $0.top.equalTo(contentImageView.snp.bottom).offset(3)
             $0.leading.equalToSuperview()
         }
+    }
+
+    func dataBind(image: UIImage, title: String) {
+        self.contentImageView.image = image
+        self.titleLabel.text = title
     }
 }

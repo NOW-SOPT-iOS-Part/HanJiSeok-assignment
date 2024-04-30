@@ -19,14 +19,14 @@ class PosterPageControl: UICollectionReusableView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupPageControl()
+        setUp()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupPageControl() {
+    private func setUp() {
         addSubview(pageControl)
         pageControl.snp.makeConstraints {
             $0.top.equalToSuperview()

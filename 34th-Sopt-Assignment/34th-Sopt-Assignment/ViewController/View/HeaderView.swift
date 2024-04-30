@@ -30,6 +30,14 @@ class HeaderView: UICollectionReusableView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setUp()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder: ) has not been implemented")
+    }
+
+    func setUp() {
         self.addSubview(titleLabel)
         self.addSubview(nextButton)
         titleLabel.snp.makeConstraints {
@@ -42,7 +50,7 @@ class HeaderView: UICollectionReusableView {
         }
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder: ) has not been implemented")
+    func dataBind(title: String) {
+        self.titleLabel.text = title
     }
 }
