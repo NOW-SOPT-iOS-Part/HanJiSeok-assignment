@@ -17,11 +17,11 @@ enum MockData {
     ]
 
     static let poster: [Poster] = [
-        Poster(title: "너의 이름은", description: "키미토노 라부 수토리\n 살려주세요", image: .contents5),
-        Poster(title: "내 이름은 김삼순", description: "키미토노 라부 수토리\n 살려주세요", image: .contents4),
-        Poster(title: "누 구세요", description: "키미토노 라부 수토리\n 살려주세요", image: .contents3),
-        Poster(title: "누구 없소", description: "키미토노 라부 수토리\n 살려주세요", image: .contents2),
-        Poster(title: "안녕하시라", description: "키미토노 라부 수토리\n 살려주세요", image: .contents1)
+        Poster(title: "너의 이름은", description: "키미토노 라부 수토리\n살려주세요", image: .contents5),
+        Poster(title: "내 이름은 김삼순", description: "키미토노 라부 수토리\n살려주세요", image: .contents4),
+        Poster(title: "누 구세요", description: "키미토노 라부 수토리\n살려주세요", image: .contents3),
+        Poster(title: "누구 없소", description: "키미토노 라부 수토리\n살려주세요", image: .contents2),
+        Poster(title: "안녕하시라", description: "키미토노 라부 수토리\n살려주세요", image: .contents1)
     ]
 
     static let title: [String] = [
