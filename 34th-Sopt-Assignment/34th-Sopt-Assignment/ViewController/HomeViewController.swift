@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class HomeViewController: UIViewController {
 
@@ -14,15 +15,7 @@ class HomeViewController: UIViewController {
         static let headerViewHorizontalInset = 12.0
     }
 
-    private let scrollView = UIScrollView()
-    private let contentView = UIView()
     private var collectionView: UICollectionView? = nil
-    private let posterImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = .contents4
-        return imageView
-    }()
-
     private let tabHeaderView = TabHeaderView()
     private let navigationItemHiddenView: UIView = {
         let hiddenView = UIView()
@@ -30,6 +23,8 @@ class HomeViewController: UIViewController {
         hiddenView.isHidden = true
         return hiddenView
     }()
+
+    let pagingInfoSubject = PassthroughSubject<Int, Never>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,9 +91,7 @@ class HomeViewController: UIViewController {
         registerCells()
         self.view.addSubview(collectionView!)
     }
-}
 
-extension HomeViewController {
     private func registerCells() {
         self.collectionView!.register(
             PosterCell.self,
@@ -118,7 +111,9 @@ extension HomeViewController {
             forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
             withReuseIdentifier: PosterPageControl.identifier)
     }
+}
 
+extension HomeViewController {
     private func createSection(for sectionIndex: Int) -> NSCollectionLayoutSection {
         switch sectionIndex {
         case 0:
@@ -164,12 +159,17 @@ extension HomeViewController {
         section.contentInsets = NSDirectionalEdgeInsets(
             top: 0,
             leading: 0,
-            bottom: 30,
+            bottom: 10,
             trailing: 0
         )
         section.boundarySupplementaryItems = [
             footer
         ]
+        section.visibleItemsInvalidationHandler = { [weak self] (items, offset, env) -> Void in
+            guard let self = self else { return }
+            let page = round(offset.x / self.view.bounds.width)
+            self.pagingInfoSubject.send(Int(page))
+        }
         return section
     }
 
@@ -218,7 +218,6 @@ extension HomeViewController {
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-
     func collectionView(
         _ collectionView: UICollectionView,
         viewForSupplementaryElementOfKind kind: String,
@@ -228,7 +227,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let headerView = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier: HeaderView.identifier,
-                for: indexPath) as! HeaderView
+                for: indexPath
+            ) as! HeaderView
             headerView.titleLabel.text = MockData.title[indexPath.section - 1]
             headerView.titleLabel.textColor = .white
             return headerView
@@ -236,7 +236,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let footerView = collectionView.dequeueReusableSupplementaryView(
                 ofKind: kind,
                 withReuseIdentifier: PosterPageControl.identifier,
-                for: indexPath) as! PosterPageControl
+                for: indexPath
+            ) as! PosterPageControl
+            footerView.bind(
+                pagingInfoSubject: pagingInfoSubject,
+                section: indexPath.section
+            )
             return footerView
         } else {
             return UICollectionReusableView()
@@ -276,7 +281,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for: indexPath
             ) as? PosterCell
             else { return UICollectionViewCell() }
-            posterCell.posterImageView.image = MockData.poster[indexPath.row].image
+            posterCell.dataBind(MockData.poster[indexPath.row])
             cell = posterCell
         } else {
             guard let contentCell = collectionView.dequeueReusableCell(
@@ -284,8 +289,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for: indexPath
             ) as? ContentCell
             else { return UICollectionViewCell() }
-            contentCell.contentImageView.image = MockData.contents[indexPath.row].0
-            contentCell.titleLabel.text = MockData.contents[indexPath.row].1
+            contentCell.dataBind(
+                image: MockData.contents[indexPath.row].0,
+                title: MockData.contents[indexPath.row].1
+            )
             cell = contentCell
         }
         return cell
