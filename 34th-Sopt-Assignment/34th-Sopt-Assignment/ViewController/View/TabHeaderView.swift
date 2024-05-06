@@ -41,20 +41,29 @@ final class TabHeaderView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUp()
+        setUI()
+        setAutoLayout()
+        setDelegate()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setUp() {
+    func setUI() {
         addSubview(collectionView)
+    }
+
+    func setAutoLayout() {
         collectionView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.horizontalEdges.equalToSuperview().inset(4)
             $0.bottom.equalToSuperview().inset(Metric.collectionViewBottomSpacing)
         }
+    }
+
+
+    func setDelegate() {
         collectionView.delegate = self
         collectionView.dataSource = self
     }

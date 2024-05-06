@@ -30,16 +30,20 @@ class HeaderView: UICollectionReusableView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUp()
+        setUI()
+        setAutoLayout()
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder: ) has not been implemented")
     }
 
-    func setUp() {
+    func setUI() {
         self.addSubview(titleLabel)
         self.addSubview(nextButton)
+    }
+
+    func setAutoLayout() {
         titleLabel.snp.makeConstraints {
             $0.leading.equalTo(self.snp.leading)
             $0.centerY.equalTo(self.snp.centerY)
