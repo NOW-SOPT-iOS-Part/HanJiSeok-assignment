@@ -86,7 +86,7 @@ extension TabHeaderView: UICollectionViewDataSource {
             for: indexPath
         ) as? TabHeaderCell
         else { return UICollectionViewCell() }
-        cell.dataBind(
+        cell.bindData(
             title: items[indexPath.row],
             color: indexPath.row == selectedIndex ? .white : .gray,
             underlineColor: indexPath.row == selectedIndex ? .white : .clear

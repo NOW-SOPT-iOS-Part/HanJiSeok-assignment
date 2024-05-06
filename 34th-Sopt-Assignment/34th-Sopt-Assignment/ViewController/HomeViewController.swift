@@ -174,7 +174,7 @@ extension HomeViewController {
     }
 
     private func contentSection(
-        weightConstant: Int
+        weightConstant: Int 
     ) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.25),
@@ -281,7 +281,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for: indexPath
             ) as? PosterCell
             else { return UICollectionViewCell() }
-            posterCell.dataBind(MockData.poster[indexPath.row])
+            posterCell.bindData(MockData.poster[indexPath.row])
             cell = posterCell
         } else {
             guard let contentCell = collectionView.dequeueReusableCell(
@@ -289,7 +289,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 for: indexPath
             ) as? ContentCell
             else { return UICollectionViewCell() }
-            contentCell.dataBind(
+            contentCell.bindData(
                 image: MockData.contents[indexPath.row].0,
                 title: MockData.contents[indexPath.row].1
             )

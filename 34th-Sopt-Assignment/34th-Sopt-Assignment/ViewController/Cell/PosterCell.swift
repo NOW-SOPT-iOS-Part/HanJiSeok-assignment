@@ -66,7 +66,7 @@ final class PosterCell: UICollectionViewCell {
         }
     }
 
-    func dataBind(_ poster: Poster) {
+    func bindData(_ poster: Poster) {
         self.posterImageView.image = poster.image
         self.titleLabel.text = poster.title
         self.descriptionLabel.text = poster.description

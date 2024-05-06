@@ -51,7 +51,10 @@ final class ContentCell: UICollectionViewCell {
         }
     }
 
-    func dataBind(image: UIImage, title: String) {
+    func bindData(
+        image: UIImage,
+        title: String
+    ) {
         self.contentImageView.image = image
         self.titleLabel.text = title
     }

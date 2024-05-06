@@ -55,7 +55,7 @@ final class TabHeaderCell: UICollectionViewCell {
         delegate?.titleButtonTapped(self)
     }
     
-    func dataBind(
+    func bindData(
         title: String,
         color: UIColor,
         underlineColor: UIColor

@@ -50,7 +50,7 @@ class HeaderView: UICollectionReusableView {
         }
     }
 
-    func dataBind(title: String) {
+    func bindData(title: String) {
         self.titleLabel.text = title
     }
 }
