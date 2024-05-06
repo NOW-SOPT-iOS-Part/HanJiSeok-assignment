@@ -11,9 +11,10 @@ protocol TabCollectionViewCellDelegate: AnyObject {
     func titleButtonTapped(_ cell: TabHeaderCell)
 }
 
-class TabHeaderCell: UICollectionViewCell {
-    static let identifier = "TabHeaderCell"
+final class TabHeaderCell: UICollectionViewCell {
     
+    static let identifier = "TabHeaderCell"
+
     weak var delegate: TabCollectionViewCellDelegate?
     
     let titleButton: UIButton = {
@@ -72,6 +73,4 @@ class TabHeaderCell: UICollectionViewCell {
             $0.height.equalTo(2)
         }
     }
-    
 }
-

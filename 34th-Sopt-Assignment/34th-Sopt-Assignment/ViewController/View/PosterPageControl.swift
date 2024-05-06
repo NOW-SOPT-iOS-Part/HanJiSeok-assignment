@@ -10,7 +10,7 @@ import Combine
 
 import SnapKit
 
-class PosterPageControl: UICollectionReusableView {
+final class PosterPageControl: UICollectionReusableView {
 
     static let identifier = "PosterPageControl"
     let pageControl = UIPageControl()

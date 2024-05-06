@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class TabHeaderView: UIView {
+final class TabHeaderView: UIView {
 
     enum Metric {
         static let interItemSpacing = 28.0

@@ -9,8 +9,8 @@ import UIKit
 
 import SnapKit
 
-class PosterCell: UICollectionViewCell {
-
+final class PosterCell: UICollectionViewCell {
+    
     static let identifier = "PosterCell"
 
     private let posterImageView = UIImageView()
@@ -71,5 +71,4 @@ class PosterCell: UICollectionViewCell {
         self.titleLabel.text = poster.title
         self.descriptionLabel.text = poster.description
     }
-
 }

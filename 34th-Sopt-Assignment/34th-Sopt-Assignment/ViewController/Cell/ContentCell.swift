@@ -9,8 +9,8 @@ import UIKit
 
 import SnapKit
 
-class ContentCell: UICollectionViewCell {
-
+final class ContentCell: UICollectionViewCell {
+    
     static let identifier = "ContentCell"
 
     let contentImageView = UIImageView()
