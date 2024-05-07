@@ -19,4 +19,14 @@ extension String {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         return passwordTest.evaluate(with: self)
     }
+
+    func formattedWithSeparator() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.locale = Locale.current
+
+        guard let number = numberFormatter.number(from: self) else { return self }
+
+        return numberFormatter.string(from: number) ?? self
+    }
 }

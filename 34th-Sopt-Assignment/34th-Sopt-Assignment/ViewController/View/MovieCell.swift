@@ -84,7 +84,7 @@ final class MovieCell: UITableViewCell {
     }
 
     func bindData(_ movie: MovieModel) {
-        var amount = Int(movie.amount)!.toKoreanNumber.replacingOccurrences(of: ",", with: "")
+        var amount = Int(movie.amount)!.toKoreanNumber().replacingOccurrences(of: ",", with: "")
         amount.removeLast()
         rankLabel.text = "\(movie.rank)등"
         nameLabel.text = movie.name
