@@ -15,12 +15,11 @@ class MovieListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Task {
-            movieModels = await MovieModel.fetchMovie()
-            self.tableView.reloadData()
-        }
         setUI()
         register()
+        Task {
+            try await getMovieList()
+        }
     }
 
     private func setUI() {
@@ -37,6 +36,15 @@ class MovieListViewController: UIViewController {
             MovieCell.self,
             forCellReuseIdentifier: MovieCell.identifier
         )
+    }
+
+    private func getMovieList() async throws {
+        let movieService = MovieService()
+        guard let getMovies = try await movieService.fetch(request: FetchMovieRequest()) else {
+            return
+        }
+        movieModels = getMovies
+        self.tableView.reloadData()
     }
 }
 

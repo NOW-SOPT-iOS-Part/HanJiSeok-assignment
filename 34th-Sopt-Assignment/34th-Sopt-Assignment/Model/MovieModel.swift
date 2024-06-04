@@ -12,15 +12,4 @@ struct MovieModel {
     let name: String
     let amount: String
     let audience: String
-
-    static func fetchMovie() async -> [MovieModel] {
-        do {
-            guard let movieService = try await MovieService.shared.fetch(request: FetchMovieRequest()) else {
-                return []
-            }
-            return movieService
-        } catch {
-            return []
-        }
-    }
 }

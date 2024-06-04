@@ -10,9 +10,7 @@ import Foundation
 import Moya
 
 final class MovieService {
-    static let shared = MovieService()
     private var movieProvider = MoyaProvider<APITarget.Movie>(plugins: [MoyaLoggingPlugin()])
-    private init() { }
 }
 
 extension MovieService {

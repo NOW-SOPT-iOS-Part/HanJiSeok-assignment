@@ -22,13 +22,8 @@
 		AF6832B82BCCF4EC00932406 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832B72BCCF4EC00932406 /* String+.swift */; };
 		AF6832DD2BCCF7BD00932406 /* Pretendard-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D42BCCF7BD00932406 /* Pretendard-ExtraBold.ttf */; };
 		AF6832DE2BCCF7BD00932406 /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D52BCCF7BD00932406 /* Pretendard-Black.ttf */; };
-		AF6832DF2BCCF7BD00932406 /* Pretendard-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D62BCCF7BD00932406 /* Pretendard-Light.ttf */; };
-		AF6832E02BCCF7BD00932406 /* Pretendard-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D72BCCF7BD00932406 /* Pretendard-Bold.ttf */; };
-		AF6832E12BCCF7BD00932406 /* Pretendard-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D82BCCF7BD00932406 /* Pretendard-Regular.ttf */; };
-		AF6832E22BCCF7BD00932406 /* Pretendard-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832D92BCCF7BD00932406 /* Pretendard-SemiBold.ttf */; };
 		AF6832E32BCCF7BD00932406 /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832DA2BCCF7BD00932406 /* Pretendard-Thin.ttf */; };
 		AF6832E42BCCF7BD00932406 /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832DB2BCCF7BD00932406 /* Pretendard-ExtraLight.ttf */; };
-		AF6832E52BCCF7BD00932406 /* Pretendard-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6832DC2BCCF7BD00932406 /* Pretendard-Medium.ttf */; };
 		AF6832E72BCCFC6500932406 /* UIButton+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832E62BCCFC6500932406 /* UIButton+.swift */; };
 		AF6832EA2BCD0DFA00932406 /* ClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832E92BCD0DFA00932406 /* ClearButton.swift */; };
 		AF6832ED2BCD0EDB00932406 /* CustomPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6832EC2BCD0EDB00932406 /* CustomPadding.swift */; };
@@ -89,13 +84,8 @@
 		AF6832B72BCCF4EC00932406 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		AF6832D42BCCF7BD00932406 /* Pretendard-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.ttf"; sourceTree = "<group>"; };
 		AF6832D52BCCF7BD00932406 /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
-		AF6832D62BCCF7BD00932406 /* Pretendard-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.ttf"; sourceTree = "<group>"; };
-		AF6832D72BCCF7BD00932406 /* Pretendard-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.ttf"; sourceTree = "<group>"; };
-		AF6832D82BCCF7BD00932406 /* Pretendard-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.ttf"; sourceTree = "<group>"; };
-		AF6832D92BCCF7BD00932406 /* Pretendard-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.ttf"; sourceTree = "<group>"; };
 		AF6832DA2BCCF7BD00932406 /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
 		AF6832DB2BCCF7BD00932406 /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
-		AF6832DC2BCCF7BD00932406 /* Pretendard-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.ttf"; sourceTree = "<group>"; };
 		AF6832E62BCCFC6500932406 /* UIButton+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+.swift"; sourceTree = "<group>"; };
 		AF6832E92BCD0DFA00932406 /* ClearButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearButton.swift; sourceTree = "<group>"; };
 		AF6832EC2BCD0EDB00932406 /* CustomPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPadding.swift; sourceTree = "<group>"; };
@@ -188,13 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				AF6832D52BCCF7BD00932406 /* Pretendard-Black.ttf */,
-				AF6832D72BCCF7BD00932406 /* Pretendard-Bold.ttf */,
 				AF6832D42BCCF7BD00932406 /* Pretendard-ExtraBold.ttf */,
 				AF6832DB2BCCF7BD00932406 /* Pretendard-ExtraLight.ttf */,
-				AF6832D62BCCF7BD00932406 /* Pretendard-Light.ttf */,
-				AF6832DC2BCCF7BD00932406 /* Pretendard-Medium.ttf */,
-				AF6832D82BCCF7BD00932406 /* Pretendard-Regular.ttf */,
-				AF6832D92BCCF7BD00932406 /* Pretendard-SemiBold.ttf */,
 				AF6832DA2BCCF7BD00932406 /* Pretendard-Thin.ttf */,
 			);
 			path = Fonts;
@@ -252,6 +237,7 @@
 		AFA9ED442BDF9CEA009A5C59 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				AF018FBD2BE8C13200DB2C0B /* MovieCell.swift */,
 				AFD10AE92BDBA1BD0073F57D /* PosterCell.swift */,
 				AFD10AEB2BDBA33E0073F57D /* ContentCell.swift */,
 				AFA9ED3D2BDF7DDB009A5C59 /* TabHeaderCell.swift */,
@@ -265,7 +251,6 @@
 				AFA9ED392BDEA9A9009A5C59 /* HeaderView.swift */,
 				AFA9ED472BDF9E0A009A5C59 /* PosterPageControl.swift */,
 				AFA9ED3B2BDF7BB8009A5C59 /* TabHeaderView.swift */,
-				AF018FBD2BE8C13200DB2C0B /* MovieCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,17 +346,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF6832E22BCCF7BD00932406 /* Pretendard-SemiBold.ttf in Resources */,
-				AF6832DF2BCCF7BD00932406 /* Pretendard-Light.ttf in Resources */,
 				AF10B3CC2BC6AAD1001AFDF7 /* LaunchScreen.storyboard in Resources */,
-				AF6832E12BCCF7BD00932406 /* Pretendard-Regular.ttf in Resources */,
 				AF10B3C92BC6AAD1001AFDF7 /* Assets.xcassets in Resources */,
 				AF10B3C72BC6AACF001AFDF7 /* Main.storyboard in Resources */,
 				AF6832E32BCCF7BD00932406 /* Pretendard-Thin.ttf in Resources */,
 				AF6832DD2BCCF7BD00932406 /* Pretendard-ExtraBold.ttf in Resources */,
-				AF6832E52BCCF7BD00932406 /* Pretendard-Medium.ttf in Resources */,
 				AF6832DE2BCCF7BD00932406 /* Pretendard-Black.ttf in Resources */,
-				AF6832E02BCCF7BD00932406 /* Pretendard-Bold.ttf in Resources */,
 				AF6832E42BCCF7BD00932406 /* Pretendard-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
