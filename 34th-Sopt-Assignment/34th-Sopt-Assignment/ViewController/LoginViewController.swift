@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
 import SnapKit
 
 class LoginViewController: UIViewController {
@@ -31,9 +33,6 @@ class LoginViewController: UIViewController {
         textField.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         textField.backgroundColor = .tvingGray4
         textField.layer.cornerRadius = 3
-        textField.addTarget(self,
-                            action: #selector(textFieldDidChange),
-                            for: .editingChanged)
         return textField
     }()
 
@@ -49,21 +48,15 @@ class LoginViewController: UIViewController {
         textField.backgroundColor = .tvingGray4
         textField.layer.cornerRadius = 3
         textField.isSecureTextEntry = true
-        textField.addTarget(self,
-                            action: #selector(textFieldDidChange),
-                            for: .editingChanged)
         return textField
     }()
 
-    private lazy var loginButton: UIButton = {
+    lazy var loginButton: UIButton = {
         let button = UIButton()
         button.setTitle("로그인하기", for: .normal)
         button.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         button.backgroundColor = .tvingBlack
         button.setTitleColor(.tvingGray2, for: .normal)
-        button.addTarget(self,
-                         action: #selector(loginButtonTapped),
-                         for: .touchUpInside)
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.tvingGray2.cgColor
         button.layer.cornerRadius = 6
@@ -114,14 +107,28 @@ class LoginViewController: UIViewController {
     }()
 
     private var nickname: String? = nil
+    private let viewModel: LoginViewModel
+    private let disposeBag = DisposeBag()
+
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .tvingBlack
-        idTextField.delegate = self
-        passwordTextField.delegate = self
         setLayout()
         setAutoLayout()
+        setDelegate()
+        bind()
+    }
+
+    private func setStyle() {
+        self.view.backgroundColor = .tvingBlack
     }
 
     private func setLayout() {
@@ -196,38 +203,36 @@ class LoginViewController: UIViewController {
         }
     }
 
+    private func setDelegate() {
+        idTextField.delegate = self
+        passwordTextField.delegate = self
+    }
+
+    private func bind() {
+        let input = LoginViewModel.Input(
+            idTextFieldChangeEvent: idTextField.rx.text.asObservable(),
+            passwordTextFieldChangeEvent: passwordTextField.rx.text.asObservable(),
+            loginButtonDidTapEvent: loginButton.rx.tap.asObservable()
+        )
+        let output = viewModel.transform(input)
+
+        output.isLoginSucceeded
+            .subscribe { [weak self] id in
+                guard let self = self else { return }
+                let welcomeViewController = WelcomeViewController()
+                welcomeViewController.setLabelText(id: id)
+                self.navigationController?.pushViewController(welcomeViewController, animated: true)
+            }
+            .disposed(by: disposeBag)
+
+        output
+            .isValid
+            .bind(to: self.rx.loginButtonEnabled)
+            .disposed(by: disposeBag)
+    }
 }
 
 extension LoginViewController {
-    @objc func textFieldDidChange(_ textField: UITextField) {
-        guard let id = idTextField.text,
-              !id.isEmpty,
-              let password = passwordTextField.text,
-              !password.isEmpty
-        else {
-            return
-        }
-        let value = id.isIdVaild() && password.isPasswordVaild()
-        loginButton.isEnabled = value
-        loginButton.backgroundColor = value ? .tvingRed : .tvingBlack
-        loginButton.setTitleColor(value ? .tvingWhite : .tvingGray2,
-                                  for: .normal)
-        loginButton.layer.borderWidth = value ? 0 : 1
-        loginButton.layer.borderColor = value ? nil : UIColor.tvingGray2.cgColor
-    }
-
-    @objc func loginButtonTapped(_ sender: UIButton) {
-        let welcomeViewController = WelcomeViewController()
-        var sendData: String?
-        if let nickname = nickname {
-            sendData = nickname
-        } else {
-            sendData = idTextField.text
-        }
-        welcomeViewController.setLabelText(id: sendData)
-        self.navigationController?.pushViewController(welcomeViewController, animated: true)
-    }
-
     @objc func nicknameButtonTapped(_ sender: UIButton) {
         let nicenameViewController = NicknameViewController()
         if let sheet = nicenameViewController.sheetPresentationController {
@@ -253,5 +258,18 @@ extension LoginViewController: UITextFieldDelegate {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.layer.borderColor = nil
+    }
+}
+
+extension Reactive where Base: LoginViewController {
+    var loginButtonEnabled: Binder<Bool> {
+        return Binder(self.base) { viewController, value in
+            viewController.loginButton.isEnabled = value
+            viewController.loginButton.backgroundColor = value ? .tvingRed : .tvingBlack
+            viewController.loginButton.setTitleColor(value ? .tvingWhite : .tvingGray2,
+                                                     for: .normal)
+            viewController.loginButton.layer.borderWidth = value ? 0 : 1
+            viewController.loginButton.layer.borderColor = value ? nil : UIColor.tvingGray2.cgColor
+        }
     }
 }
